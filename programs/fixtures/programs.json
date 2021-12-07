@@ -1,0 +1,41 @@
+[{
+        "pk": 1,
+        "model": "programs.program",
+        "fields": {
+            "name": "At home program",
+            "description": "This is a 4-week at home workout program for individuals who would like a well-constructed workout, with limited equipment that will get them sweating in the comfort of their own home. This workout has 4 different routines that will get your heart rate up without the gym and all exercises have illustrations for your convenience.  After purchase the program is sent immediately to your email, please be aware there are not returns.",
+            "equipment": " 5-15lb Dumbbells (Not needed if you have bands), Fit Simplify 11 Piece Resistance Band Set with Door Anchor, Loop Bands, Jump Rope, Stability Ball.",
+            "included": " 9 Easy Meals, Grocery List, Simple Meal Plan.",
+            "price": "50",
+            "image_url": "https://images.unsplash.com/photo-1627483298235-f3bac2567c1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+
+        }
+    },
+
+    {
+        "pk": 2,
+        "model": "programs.program",
+        "fields": {
+            "name": "4 week program",
+            "description": "This is a 4-week high intensity cardio and weight training program with 5 different exercise routines which require a gym. All exercises have illustrations for your convenience.  After purchase the program is sent immediately to your email, please be aware there are not returns.",
+            "equipment": "gym",
+            "included": " 9 Easy Meals, Grocery List, Simple Meal Plan.",
+            "price": "100",
+            "image_url": "https://images.unsplash.com/photo-1546483875-ad9014c88eba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1564&q=80"
+
+        }
+    },
+
+    {
+        "pk": 3,
+        "model": "programs.program",
+        "fields": {
+            "name": "12 week program",
+            "description": "This is a 12-week high intensity cardio and weight training program with 5 different exercise routines which require a gym. All exercises have illustrations for your convenience.  After purchase the program is sent immediately to your email, please be aware there are not returns.",
+            "equipment": "gym",
+            "included": " 9 Easy Meals, Grocery List, Simple Meal Plan.",
+            "price": "150",
+            "image_url": "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80"
+        }
+    }
+]
