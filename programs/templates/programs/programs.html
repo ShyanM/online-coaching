@@ -24,9 +24,15 @@
                 {% for program in programs %}
                 <div class="col-sm-6 col-md-6 col-lg-4">
                     <div class="card h-100 border-0">
-                        <a href="">
+                        {% if program.image %}
+                        <a href="{% url 'program_detail' program.id %}">
                             <img class="card-img-top img-fluid" src="{{ program.image.url }}" alt="{{ program.name }}">
                         </a>
+                        {% else %}
+                        <a href="{% url 'program_detail' program.id %}">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ program.name }}">
+                        </a>
+                        {% endif %}
                         <div class="card-body pb-0">
                             <p class="mb-0">{{ program.name }}</p>
                         </div>
