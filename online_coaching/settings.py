@@ -159,3 +159,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# had an issue with the CSRF token, found solution below from code institute slack - John Wrafter.
+CSRF_TRUSTED_ORIGINS = ['https://8000-moccasin-rhinoceros-s8gmkd6c.ws-eu23.gitpod.io']
