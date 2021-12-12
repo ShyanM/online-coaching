@@ -20,8 +20,8 @@
     <div class="row">
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
             {% if program.image %}
-            <a href="" target="_blank">
-                <img class="card-img-top img-fluid" src="{{ programs.image.url }}" alt="{{ programsß.name }}">
+            <a href="{{ program.image.url }}" target="_blank">
+                <img class="card-img-top img-fluid" src="{{ program.image.url }}" alt="{{ program.name }}">
             </a>
             {% else %}
             <a href="{% url 'program_detail' program.id %}">
