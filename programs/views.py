@@ -1,4 +1,5 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.contrib import messages
 from .models import Program
 from .forms import ProgramForm
 
@@ -29,7 +30,17 @@ def program_detail(request, program_id):
 
 
 def add_program(request):
-    form = ProgramForm()
+    if request.method == 'POST':
+        form = ProgramForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Program successfully added!')
+            return redirect(reverse('add_program'))
+        else:
+            messages.error(request, 'Addition failed. Please make sure all inputs are correct.')
+    else:
+        form = ProgramForm()
+
     template = 'programs/add_program.html'
     context = {
         'form': form,
