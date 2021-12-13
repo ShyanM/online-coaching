@@ -115,7 +115,7 @@
                         <span class="icon">
                             <i class="fas fa-exclamation-circle"></i>
                         </span>
-                        <span>Your card will be charged <strong>${{ order_total|floatformat:2 }}</strong></span>
+                        <span>Your card will be charged <strong>${{ total|floatformat:2 }}</strong></span>
                     </p>
                 </div>
             </form>
@@ -124,4 +124,11 @@
     </div>
 </div>
 
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}
