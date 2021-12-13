@@ -22,13 +22,13 @@ class Order(models.Model):
     order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     
 
-    def generate_order_number(self):
+    def _generate_order_number(self):
         """ generate random and unique order number"""
 
         return uuid.uuid4().hex.upper()
 
     def update_total(self):
-        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum']
+        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
         self.grand_total = self.order_total
         self.save()
     
@@ -59,4 +59,4 @@ class OrderLineItem(models.Model):
         super().save(*args, **kwargs)
     
     def __str__(self):
-        return f'SKU {self.program.sku} on order {self.order.order_number}'
+        return f'{self.program} on order {self.order.order_number}'
