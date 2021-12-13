@@ -24,7 +24,6 @@ class StripeWH_Handler:
         bag - intent.metadata.bag
         save_info = intent.metadata.save_info
 
-        billing_details = intent.charges.data[0].billing_details
         return HttpResponse(
             content=f'Webhook received: {event["type"]}',
             status=200)
