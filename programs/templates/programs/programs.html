@@ -30,7 +30,8 @@
                         </a>
                         {% else %}
                         <a href="{% url 'program_detail' program.id %}">
-                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ program.name }}">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
+                                alt="{{ program.name }}">
                         </a>
                         {% endif %}
                         <div class="card-body pb-0">
@@ -44,6 +45,12 @@
                                 </div>
                             </div>
                         </div>
+                        {% if request.user.is_superuser %}
+                        <small class="ml-3">
+                            <a href="{% url 'edit_program' program.id %}">Edit</a> |
+                            <a class="text-danger" href="{% url 'delete_program' program.id %}">Delete</a>
+                        </small>
+                        {% endif %}
                     </div>
                 </div>
 
@@ -51,22 +58,22 @@
                 <div class="col-12 d-sm-none mb-5">
                     <hr>
                 </div>
-            {% endif %}                        
-            {% if forloop.counter|divisibleby:2 %}
+                {% endif %}
+                {% if forloop.counter|divisibleby:2 %}
                 <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
                     <hr>
                 </div>
-            {% endif %}
-            {% if forloop.counter|divisibleby:3 %}
+                {% endif %}
+                {% if forloop.counter|divisibleby:3 %}
                 <div class="col-12 d-none d-lg-block d-xl-none mb-5">
                     <hr>
                 </div>
-            {% endif %}
-            {% if forloop.counter|divisibleby:4 %}
+                {% endif %}
+                {% if forloop.counter|divisibleby:4 %}
                 <div class="col-12 d-none d-xl-block mb-5">
                     <hr>
                 </div>
-            {% endif %}
+                {% endif %}
                 {% endfor %}
             </div>
             {% endblock %}

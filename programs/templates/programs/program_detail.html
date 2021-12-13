@@ -68,6 +68,13 @@
                         </div>
                     </div>
 
+                    {% if request.user.is_superuser %}
+                    <small class="ml-3">
+                        <a href="{% url 'edit_program' program.id %}">Edit</a> |
+                        <a class="text-danger" href="{% url 'delete_program' program.id %}">Delete</a>
+                    </small>
+                    {% endif %}
+
                     <div class="col-12">
                         <a href="{% url 'programs' %}" class="btn rounded-0 mt-5">
                             <span class="icon">

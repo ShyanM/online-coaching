@@ -69,3 +69,10 @@ def edit_program(request, program_id):
     }
 
     return render(request, template, context)
+
+
+def delete_program(request, program_id):
+    program = get_object_or_404(Program, pk= program_id)
+    program.delete()
+    messages.success(request, 'Program deleted!')
+    return redirect(reverse('programs'))
