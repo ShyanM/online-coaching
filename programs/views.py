@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Program
+from .forms import ProgramForm
 
 # Create your views here.
 
@@ -25,3 +26,13 @@ def program_detail(request, program_id):
     }
 
     return render(request, 'programs/program_detail.html', context)
+
+
+def add_program(request):
+    form = ProgramForm()
+    template = 'programs/add_program.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
