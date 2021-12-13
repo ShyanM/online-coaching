@@ -47,3 +47,25 @@ def add_program(request):
     }
 
     return render(request, template, context)
+
+def edit_program(request, program_id):
+    program = get_object_or_404(Program, pk=program_id)
+    if request.method == 'POST':
+        form = ProgramForm(request.POST, request.FILES, instance=program)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated program!')
+            return redirect(reverse('program_detail', args=[program.id]))
+        else:
+            messages.error(request, 'Failed to update program. Please ensure the form is valid.')
+    else:
+        form = ProgramForm(instance=program)
+        messages.info(request, f'You are editing {program.name}')
+
+    template = 'programs/edit_program.html'
+    context = {
+        'form': form,
+        'program': program,
+    }
+
+    return render(request, template, context)
