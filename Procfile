@@ -1,0 +1,1 @@
+web: gunicorn online-coaching.wsgi:application
