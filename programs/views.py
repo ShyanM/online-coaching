@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from .models import Program
 from .forms import ProgramForm
 
@@ -29,7 +30,13 @@ def program_detail(request, program_id):
     return render(request, 'programs/program_detail.html', context)
 
 
+@login_required
 def add_program(request):
+    if not request.user.is_superuser:
+        message.error(request, 'Sorry only the owner can do that.')
+        return redirect(reverse('home'))
+
+
     if request.method == 'POST':
         form = ProgramForm(request.POST, request.FILES)
         if form.is_valid():
@@ -48,7 +55,13 @@ def add_program(request):
 
     return render(request, template, context)
 
+
+@login_required
 def edit_program(request, program_id):
+    if not request.user.is_superuser:
+        message.error(request, 'Sorry only the owner can do that.')
+        return redirect(reverse('home'))
+
     program = get_object_or_404(Program, pk=program_id)
     if request.method == 'POST':
         form = ProgramForm(request.POST, request.FILES, instance=program)
@@ -71,7 +84,12 @@ def edit_program(request, program_id):
     return render(request, template, context)
 
 
+@login_required
 def delete_program(request, program_id):
+    if not request.user.is_superuser:
+        message.error(request, 'Sorry only the owner can do that.')
+        return redirect(reverse('home'))
+
     program = get_object_or_404(Program, pk= program_id)
     program.delete()
     messages.success(request, 'Program deleted!')
