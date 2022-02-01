@@ -190,7 +190,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # had an issue with the CSRF token, found solution below from code institute slack - John Wrafter.
-CSRF_TRUSTED_ORIGINS = ['https://8000-moccasin-rhinoceros-s8gmkd6c.ws-eu23.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-moccasin-rhinoceros-s8gmkd6c.ws-eu30.gitpod.io']
 
 # Stripe
 STRIPE_CURRENCY = 'usd'
