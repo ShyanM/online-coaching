@@ -63,10 +63,19 @@
                                 <div><i class="fas fa-user fa-lg"></i></div>
                                 <p class="my-0">My Account</p>
                             </div>
-                            <div class="text-center">
-                                <a href="{% url 'programs' %}" class="dropdown-item">Programs</a>
-                            </div>
+                           
                         </a>
+
+                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <div class="text-center">
+                                <div class="text-center">
+                                    <a href="{% url 'programs' %}" class="dropdown-item">Programs</a>
+                                </div>
+                            </div>
+                           
+                        </a>
+
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
