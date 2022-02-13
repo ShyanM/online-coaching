@@ -1,4 +1,4 @@
-You can find a link to the live website [here]().
+You can find a link to the live website [here](https://shyanm-online-coaching.herokuapp.com/).
 
 
 # Online Coaching
@@ -53,7 +53,7 @@ The design is very simple as I was focusing on the website building.
 
 ## 3. Database Design
 
-- ![alt text](assets/maltese_recipes.png)
+- ![alt text]()
 
 ## 4. Technologies used
 
@@ -67,12 +67,11 @@ The design is very simple as I was focusing on the website building.
 
 ### Frameworks, Libraries and Programs used
 
-- Materialize
-- Flask
 - jQuery
 - Git
 - Github
 - Heroku
+- AWS
 
 
 ## 5. Testing
@@ -84,10 +83,6 @@ To view the deployed version of this website:
 
 ### Content
 
-Links to recipes:
-https://www.ilovefood.com.mt/recipes/biskuttini-tal-lews-morr/
-http://partaste.com/worldrecipes/imqarrun-il-forn-maltese-baked-macaroni-casserole/
-https://www.deliciousmagazine.co.uk/recipes/ottijiet-maltese-spice-biscuits/
 
 ### Code
 
