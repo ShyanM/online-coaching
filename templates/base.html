@@ -67,11 +67,10 @@
                         </a>
 
                         
-                        <div class="dropdown-menu border-0">
+                        <div>
                              <a href="{% url 'programs' %}" class="dropdown-item">Programs</a>
                         </div>
                            
-
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
